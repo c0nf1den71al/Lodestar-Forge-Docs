@@ -1,0 +1,52 @@
+---
+title: Connecting
+description: How to connect to Lodestar Forge.
+---
+
+Once Forge is running, the platform will automatically be populated with a default account, this account can be used across both Forge Command and Forge Nucleus components.
+
+<Note type="danger" title="Important">
+    The default account has full administrative privileges. It is strongly recommended to change the default password immediately after logging in.
+</Note>
+
+## Forge Command
+
+To access Forge Command, simply navigate to the Forge Command URL in your web browser, for example `http://localhost:3000`.
+
+<Note>
+    The default Command port is `3000`, which can be changed by modifying the `COMMAND_PORT` environment variable.
+</Note>
+
+You can authenticate using the default administrator account which is automatically created during the first launch of Forge Nucleus. The credentials will be displayed in the docker logs in the following format.
+
+```shell
+###################################
+# Forge Admin Credentials
+# User: admin@lodestar-forge.local
+# Password: secure_password_string
+###################################
+```
+
+## Forge Nucleus
+
+Forge Nucleus utilises bearer tokens for authentication. To obtain a bearer token, you can use the Forge Nucleus API to generate one.
+
+<Note>
+    The default Nucleusport is `4000`, which can be changed by modifying the `NUCLEUS_PORT` environment variable.
+</Note>
+
+An example of how to obtain a bearer token using the Forge Nucleus API using cURL:
+
+```shell
+curl -X POST -H "Content-Type: application/json" -d '{"email": "admin@lodestar-forge.local", "password": "secure_password_string"}' http://localhost:4000/auth/login
+```
+
+Once a bearer token has been obtained, you can use it to authenticate with Forge Nucleus by including it in the `Authorization` header of your requests. For more information on how to use the Forge Nucleus API, please refer to the [API documentation](https://api.lodestar-forge.com).
+
+## Forge Store
+
+The Forge Store database is a PostgreSQL database with it&apos;s name and default credentials set during buildtime. These attributes can be set using the `POSTGRES_DB`, `POSTGRES_USER`, and `POSTGRES_PASSWORD` environment variables.
+
+## Forge Radar
+
+Forge Nucleus automatically manages and authenticates with Forge Radar using a default service account `Radar-Service`. This account cannot be deleted or modified, and is used for internal operations within Forge Nucleus.

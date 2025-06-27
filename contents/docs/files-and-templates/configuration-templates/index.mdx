@@ -1,0 +1,60 @@
+---
+title: Configuration Templates
+description: Ansible templates used for configuring infrastructure.
+---
+
+Configuration templates are used to configure infrastructure resources using Ansible. They are written in yaml, however, can utilise custom variables (covered [here](/docs/files-and-templates)).
+
+## Default Configuration Templates
+
+We understand that you might want to get started straight away. To do so, you can use the default configuration templates provided by Forge. These templates are designed to get you up and running quickly, with minimal changes required.
+
+The default configuration templates available in Forge are outlined below.
+
+|Name|Description|
+|---|---|
+|Nginx Install|A template for installing and configuring nginx.|
+|Sliver C2 Install|A template for installing and configuring sliver C2.|
+|Mythic C2 Install|A template for installing and configuring Mythic C2.|
+|Docker Install|A template for installing and configuring Docker.|
+|Elastic Stack Install|A template for installing Elastic Stack. Requires docker install first.|
+|Filebeat Install|A template for installing and configuring Filebeat.|
+
+## Creating A Configuration Template
+
+To create a new configuration template, follow these steps.
+1. Select your account in the bottom left corner of the Forge dashboard.
+2. Click the "Settings" button.
+3. Select the "Configuration Templates" tab, then "Create Template".
+4. Complete the form to add your new template.
+
+![Creating a new configuration template in Forge](/images/create-configuration-template.png)
+
+### Important Considerations
+
+Whilst Forge aims to provide a seamless experience when applying configuration templates, it is important to note that some adjustments may be required when bringing your own configuration templates into Forge.
+
+<Note type="danger" title="Important">
+    Failing to follow these guidelines may result in unexpected behavior or errors during deployment.
+</Note>
+
+#### Hosts
+There is no need to add the `hosts` block to your configuration templates. Forge will automatically manage this.
+
+#### Inventory Files
+Similar to above, Forge will automatically manage the assignment of hosts when configuring your infrastructure. Therefore, there is no need to create or modify `inventory.yml` files.
+
+### Configuration Template Variables
+
+The following variables are available for use in configuration templates.
+
+|Name|Description|
+|---|---|
+|`infrastructure-id`|A unique identifier assigned to the infrastructure created.|
+|`text`|Basic text|
+|`number`|Basic number.|
+|`private-ip`|Private IP address of a host.|
+|`public-ip`|Public IP address of a host.|
+|`tailscale-ip`|Tailscale IP address of a host.|
+|`domain`|A domain tracked within Forge.|
+|`file`|A file path, of a file created within Forge.|

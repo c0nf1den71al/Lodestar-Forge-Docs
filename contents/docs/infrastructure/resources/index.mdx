@@ -1,0 +1,21 @@
+---
+title: Resources
+description: Resources within Lodestar Forge.
+---
+
+Any infrastructure which is created within Forge consists of resources. Resources are purely for informational purposes and cannot be modified. Each resource contains the following attributes which can be useful when debugging or manually modifying your infrastructure:
+
+* **Identifier:** The Terraform resource type plus the resource name.
+* **Forge ID:** The unique identifier assigned to the resource by Forge.
+* **Provider ID:** The unique identifier assigned to the resourceby the cloud provider.
+
+Primarily, a Forge resource is mapped to each Terraform resource defined within the [infrastructure template](/docs/files-and-templates/infrastructure-templates) used.
+
+## Viewing Resources
+To view the resources assigned to a piece of infrastructure. Follow the steps below.
+1. With a project selected, select the "Deployments" tab in the sidebar.
+2. Select the deployment from the deployments table.
+3. Select the infrastructure you wish to view the resources for.
+4. View the resources assigned within the "Resources" section.
+
+![Resources for default infrastructure](/images/resources-table.png)

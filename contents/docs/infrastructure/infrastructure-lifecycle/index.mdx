@@ -1,0 +1,35 @@
+---
+title: Infrastructure Lifecycle
+description: The lifecycle of infrastructure within Lodestar Forge explained.
+---
+
+Infrastructure within Forge have several stages. The stage of the infrastructure is indicated by its current "status" tag. An overview of the stages is provided below.
+
+<Stepper>
+  <StepperItem title="Stage 1: Pending">
+      At this stage the infrastructure has been added to Forge and is ready to be built. To deploy the infrastructure, click the "Deploy" button in the "Deployment Status" card.
+  </StepperItem>
+
+  <StepperItem title="Stage 2: Building">
+      The infrastructure is currently being built using Terraform.
+  </StepperItem>
+
+  <StepperItem title="Stage 3: Running">
+      The infrastructure is currently running with no issues.
+  </StepperItem>
+
+  <StepperItem title="Stage 4: Configuring">
+      The infrastructure is currently being configured using Ansible. After this is complete, the infrastructure will return to the "Running" status.
+  </StepperItem>
+</Stepper>
+
+## Other Stages
+Forge infrastructure supports two other stages, "Default" and "Failed" which are not part of the normal lifecycle. These are outlined below.
+
+### Default
+Any infrastructure which is default to Forge and cannot be modified is considered "default". This includes the default networking infrastructure which is created when a deployment is [prepared](/docs/deployments/deployment-lifecycle).
+
+### Failed
+Hopefully you never see this stage. This stage is only used if the infrastructure failed to deploy or configure.
+
+Check the logs for more information on why the infrastructure failed.

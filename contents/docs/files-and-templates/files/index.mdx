@@ -1,0 +1,41 @@
+---
+title: Files
+description: Files used for configuring infrastructure.
+---
+
+Files can be used by configuration templates. Their content can be anything, however, can utilise custom variables (covered [here](/docs/files-and-templates)).
+
+## Default Files
+
+We understand that you might want to get started straight away. To do so, you can use the default files provided by Forge. These files are designed to get you up and running quickly, with minimal configuration required.
+
+The default files available in Forge are outlined below.
+
+|Name|Description|
+|---|---|
+|nginx-http-redirector.conf|A configuration file used when configuring HTTP redirectors.|
+|filebeat-config.yml|A configuration file used when configuring Filebeat.|
+
+## Creating A File
+
+To create a new file, follow these steps.
+1. Select your account in the bottom left corner of the Forge dashboard.
+2. Click the "Settings" button.
+3. Select the "File Manager" tab, then "Create File".
+4. Complete the form to add your new file.
+
+![Creating a new file in Forge](/images/create-file.png)
+
+### File Variables
+
+The following variables are available for use within files.
+
+|Name|Description|
+|---|---|
+|`infrastructure-id`|A unique identifier assigned to the infrastructure created.|
+|`text`|Basic text|
+|`number`|Basic number.|
+|`private-ip`|Private IP address of a host.|
+|`public-ip`|Public IP address of a host.|
+|`tailscale-ip`|Tailscale IP address of a host.|
+|`domain`|A domain tracked within Forge.|

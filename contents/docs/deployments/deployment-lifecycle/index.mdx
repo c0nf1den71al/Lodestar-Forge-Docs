@@ -1,0 +1,56 @@
+---
+title: Deployment Lifecycle
+description: The lifecycle of a deployment within Lodestar Forge explained.
+---
+
+Forge deployments are complex and involve multiple stages. The deployment status indicates the current state or stage of the deployment. A brief overview of the lifecycle of a deployment is as follows.
+
+<Stepper>
+  <StepperItem title="Stage 1: Ready to Prepare">
+      At this stage the deployment is ready to prepare. Preparing the deployment can be done using the "Perpare" button in the "Deployment Status" card.
+  </StepperItem>
+
+  <StepperItem title="Stage 2: Preparing">
+      The deployment is currently being prepared. This includes initiating terraform and creating the underlying network infrastructure and SSH keys.
+  </StepperItem>
+
+  <StepperItem title="Stage 3: Ready to Deploy">
+      All underlying/required infrastructure has been created within the target cloud provider. [Infrastructure](/docs/infrastructure) must now be added to the deployment before proceeding to the next step.
+
+      Once infrastructure has been added, the deployment can be deployed using the "Deploy" button in the "Deployment Status" card.
+  </StepperItem>
+
+  <StepperItem title="Stage 4: Deploying">
+      The deployment&apos;s infrastructure is currently being deployed. This may take a while depending on the size and complexity of the deployment.
+  </StepperItem>
+
+  <StepperItem title="Stage 5: Ready to Configure">
+      All defined Infrastructure has been created and can be configured. For more information on configuring infratucture refer to [this](/docs/infrastructure/configuring-infrastructure) guide. Configurations must be added to proceed.
+
+      From this point, new infrastructure can be added and deployments can be redeployed at any time using the "Deploy" button in the "Deployment Status" card.
+  </StepperItem>
+
+  <StepperItem title="Stage 6: Configuring">
+      The deployment&apos;s infrastructure is currently being configured. This may take a while depending on the size and complexity of the deployment.
+  </StepperItem>
+
+  <StepperItem title="Stage 7: Live">
+      The deployment&apos;s infrastructure has been successfully deployed and configured. It is now live and ready for use.
+
+      From this point, further configurations can be applied using the "Configure" button in the "Deployment Status" card.
+  </StepperItem>
+
+  <StepperItem title="Stage 8: Destroying">
+      This stage is used when destroying the deployment and it&apos;s infrastructure.
+
+      Details on how to destroy a deployment can be found [here](#deleting-a-deployment).
+  </StepperItem>
+</Stepper>
+
+## Other Stages
+Forge deployments support one other stages "Failed" which is not part of the normal lifecycle. This is outlined below.
+
+### Failed
+Hopefully you never see this stage. This stage is only used if the deployment failed to deploy or configure.
+
+Check the logs for more information on why the deployment failed.

@@ -1,0 +1,51 @@
+---
+title: Tailscale
+description: A required provider which allows infrastructure to be configured.
+---
+
+Tailscale is a provider (currently) required by Forge. Tailscale is a VPN service which is utilised to configure infrastructure without the need for a jump/bastion host.
+
+## Tailscale API Keys
+
+The Tailscale integration requires a Tailscale API Key. Whilst this documentation does not cover how to create Tailscale API Keys, you can find instructions on how to do so [here](https://tailscale.com/kb/1252/key-secret-management).
+
+## Tailscale ACLs and Tags
+
+Depending on your current Tailscale ACLs, Forge may not be able to connect to your infrastructure. Given this, the existing Access Control Lists (ACL) must be updated to allow Forge to connect.
+
+The easiest way to do this is by defining a new Tag which can be utilised by Forge. This tag can be defined within the Access Control Lists (ACL) section of the Tailscale dashboard. An example Tag definition and network rule can be found below.
+
+```json
+{
+  "tagOwners": {
+    "tag:lodestar-forge": ["group:admin"],
+  },
+
+  "acls": [
+    {
+      "action": "accept",
+      "src":    ["tag:lodestar-forge"],
+      "dst":    ["tag:lodestar-forge:*"],
+    }
+  ]
+}
+```
+
+This rule allows any devices tagged with the `lodestar-forge` tag to communicate with each other. You can tell Forge to use this tag by changing the "Tailscale Tag" field within the infastructure settings.
+
+![Custom Tailscale tag used by Forge](/images/tailscale-custom-tag.png)
+
+## Add a Tailscale Integration
+
+To add a Tailscale integration into Forge, simply follow the steps below.
+
+<Note type="warning" title="Warning">
+    Tailscale API Keys expire after 90 days. To ensure your integration remains active, it is recommended to regularly update your API Key.
+</Note>
+
+1. Select your account in the bottom left corner of the Forge dashboard.
+2. Click the "Settings" button.
+3. Select the "integrations" tab, then "Add Integration".
+4. Complete the form to add your Tailscale integration.
+
+![Adding a Tailscale integration in Forge](/images/add-tailscale-integration.png)

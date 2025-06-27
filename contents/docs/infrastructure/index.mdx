@@ -1,0 +1,20 @@
+---
+title: Infrastructure
+description: Everything about infrastructure within Lodestar Forge.
+---
+
+A single deployment can contain multiple pieces of infrastructure. Infrastructure is used to define a singular host and its associated resources, for example, a C2 server, and its associated firewall rules.
+
+Infrastructure should follow a modular approach, for the best management and consistency.
+
+## Infrastructure Details
+
+Each piece of infrastructure within Forge has several attributes, the key attributes are as follows.
+
+* **Infrastructure Name:** The name of the infrastructure, it is recommended to use a unique name for each peice of infrastructure so they can be easily identified.
+* **Infrastructure Description:** A brief description of the infrastructure.
+* **Infrastructure Status:** The current [status](#infrastructure-lifecycle) of the infrastructure.
+* **Configurations:** [Configurations](/docs/infrastructure/configuring-infrastructure) added to the infrastructure.
+* **Resources:** The [resources](/docs/resources) associated with each piece of infrastructure.
+
+![Infrastructure Overview](/images/infrastructure-overview.png)

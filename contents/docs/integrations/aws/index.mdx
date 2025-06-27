@@ -1,0 +1,30 @@
+---
+title: AWS
+description: A required cloud provider where infrastructure can be deployed.
+---
+
+One of the first steps to be taken once Forge is configured is to connect either an AWS or [DigitalOcean](/docs/integrations/digitalocean) account. At least one cloud provider must be connected to use Forge, since it is required for deploying infrastructure.
+
+## AWS Access Keys
+
+The AWS integration requires an AWS Access Key ID, and AWS Secret Access Key. Whilst this documentation does not cover how to create AWS Access Keys, you can find instructions on how to do so [here](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey).
+
+### AWS User Permissions
+
+It is recommended to create a dedicated AWS user following the principle of least privilege. The permissions assigned to the user will depend on the specific needs of your infrastructure and therefore, we cannot provide guidance on the exact permissions required.
+
+<Note>
+    Taking the above into consideration, it is possible to connect multiple AWS accounts to Forge. Therefore, specific accounts with different permissions can be utilised for different purposes.
+</Note>
+
+The only permission **required** by Forge is `ec2:DescribeImages`. This is needed for Forge to work correctly.
+
+## Add an AWS Integration
+
+To add an AWS integration into Forge, simply follow the steps below.
+1. Select your account in the bottom left corner of the Forge dashboard.
+2. Click the "Settings" button.
+3. Select the "integrations" tab, then "Add Integration".
+4. Complete the form to add your AWS integration.
+
+![Adding an AWS integration in Forge](/images/add-aws-integration.png)

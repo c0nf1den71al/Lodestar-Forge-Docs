@@ -1,0 +1,41 @@
+---
+title: Managing Deployments
+description: How to manage deployments within Lodestar Forge.
+---
+
+Deployments can easily be managed within Lodestar Forge, including creating and deleting them. This section covers both of these topics in detail.
+
+## Creating A Deployment
+To create a deployment within Forge, simply follow the steps below:
+1. With a project selected, select the "Deployments" tab in the sidebar.
+2. Click the "Create deployment" button.
+3. Complete the form to create your deployment.
+
+![Creating a deployment](/images/create-deployment.png)
+
+## Preparing A Deployment
+Before infrastructure can be added to a deployment, it must be prepared. This step performs the following actions:
+
+- Initialises Terraform.
+- Defines the default infrastructure, such as networking and SSH keys.
+- Creates the underlying infrastructure using the cloud integration speified.
+
+To prepare a deployment, simply click the "Prepare" button located within the "Deployment Status" card.
+
+![Preparing a deployment](/images/prepare-deployment.png)
+
+Once your deployment has been prepared, refer to the [infrastructure](/docs/infrastructure) section for next steps.
+
+## Deleting A Deployment
+To delete a deployment within Forge, simply follow the steps below.
+
+<Note type="danger">
+    Be careful! Once a deployment is deleted, it cannot be recovered.
+</Note>
+
+1. With a project selected, select the "Deployments" tab in the sidebar.
+2. Select the deployment to be deleted from the deployments table.
+3. Within the "Danger Zone", click the "Delete Deployment" button.
+4. Confirm the deletion by clicking the "Delete" button.
+
+![Deleting a deployment](/images/delete-deployment.png)

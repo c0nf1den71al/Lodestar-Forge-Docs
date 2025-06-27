@@ -1,0 +1,41 @@
+---
+title: Configuring Infrastructure
+description: How to configure infrastructure within Lodestar Forge.
+---
+
+After your infrastructure has been created by Forge, it will only include Tailscale and any tools you defined within a custom user-data script. Therefore, how can you configure your infrastructure?
+
+The configuration process involves using Ansible to automate the setup and configuration of your infrastructure. Here's a step-by-step guide on how to configure your infrastructure using Ansible.
+
+## Prerequisites
+Before you can configure your infrastructure, ensure that you have the following prerequisites:
+
+- The necessary configuration templates within your Forge instance (more information [here](/docs/files-and-templates/configuration-templates)).
+- Infrastructure is created and has the "Running" status.
+- A Tailscale IP has been assigned to your infrastructure.
+
+<Note>
+    You can view the tailscale IP address of your infrastructure in the "Networking" section of the infrastructure overview.
+</Note>
+
+## Adding Configurations
+Once the above prerequisites are met, you can proceed to add configurations to your infrastructure. Here's how.
+
+1. With a project selected, select the "Deployments" tab in the sidebar.
+2. Select the deployment from the deployments table.
+3. Select the infrastructure you wish to configure from the infrastructure table.
+4. Click "Edit" then "Add configuration template" in the "Configuration" section.
+5. Complete the form to add your configuration.
+6. Click "Save" to confirm the configurations added.
+
+![Adding a configuration to infrastructure](/images/add-configuration.png)
+
+## Applying Configurations
+Once you have added your configurations, you must apply them to your infrastructure. Below are the steps on how to do this.
+
+1. With a project selected, select the "Deployments" tab in the sidebar.
+2. Select the deployment from the deployments table.
+3. Click the "Configure" button in the "Deployment Status" section.
+4. Wait for the configurations to be applied.
+
+![Applying configurations to infrastructure](/images/apply-configurations.png)

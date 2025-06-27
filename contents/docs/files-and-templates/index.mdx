@@ -1,0 +1,28 @@
+---
+title: Files and Templates
+description: Files and templates used for deploying and configuring infrastructure.
+---
+
+Templates are a core component of Forge, allowing you to define, deploy, and configure infrastructure using both Terraform and Ansible. They provide a standardized way to create and manage infrastructure resources, ensuring consistency and reliability across different environments.
+
+## Template Types
+
+There are three types of files and templates used in Forge:
+
+|Type|Description|
+|---|---|
+|[Infrastructure](/docs/files-and-templates/infrastructure-templates)|Terraform template for deploying infrastructure.|
+|[Configuration](/docs/files-and-templates/configuration-templates)|Ansible template for configuring infrastructure.|
+|[File](/docs/files-and-templates/files)|Files used during the configuration stages.|
+
+## Template Varibles
+
+Forge has custom template variables built-in to the template editor, allowing you to easily reuse templates across different environments.
+
+<Note>
+    More information about variable types can be found in each of the specific template sections.
+</Note>
+
+To define these variables within any of the files or templates, simply use the syntax `$$variableName$$`.
+
+<Outlet path="/files-and-templates" />

@@ -1,0 +1,20 @@
+---
+title: Deployments
+description: Everything about deployments within Lodestar Forge.
+---
+
+Deployments within Forge are a crucial component of the platform, grouping together pieces of infrastructure. You can create one large deployment containing all your infrastrucrure. Or the alternative, more modular, approach is to create individual deployments for different environments, such as malware-development, phishing, and command and control.
+
+## Deployment Details
+
+Each deployment within Forge has several attributes, the key attributes are as follows.
+
+* **Deployment Name:** The name of the deployment, it is recommended to use a unique name for each deployment.
+* **Deployment Description:** A brief description of the deployment.
+* **Deployment Status:** The current [status](#deployment-lifecycle) of the deployment.
+* **Platform:** Select a cloud provider [integration](/docs/integrations).
+* **Region:** The provider specific region where the deployment will be hosted.
+* **Tailscale Key:** The [Tailscale key](/docs/integrations/tailscale) for the deployment.
+* **SSH Key:** The [SSH key](#) for the deployment.
+
+![Deployment Overview](/images/deployment-overview.png)

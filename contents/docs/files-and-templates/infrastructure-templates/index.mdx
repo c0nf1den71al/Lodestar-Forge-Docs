@@ -1,0 +1,61 @@
+---
+title: Infrastructure Templates
+description: Terraform templates used for deploying infrastructure.
+---
+
+Infrastructure templates are used to deploy infrastructure resources using Terraform. They are written in HCL (HashiCorp Configuration Language), however, can utilise custom variables (covered [here](/docs/files-and-templates)).
+
+## Default Infrastructure Templates
+
+We understand that you might want to get started straight away. To do so, you can use the default infrastructure templates provided by Forge. These templates are designed to get you up and running quickly, with minimal configuration required.
+
+The default infrastructure templates available in Forge are outlined below.
+
+|Name|Description|
+|---|---|
+|HTTP Redirector|A template for deploying HTTP redirectors. Defines a public-facing instance and firewall rules.|
+|C2 Server|A template for deploying C2 servers. Defines a private instance and firewall rules.|
+|Elastic Stack|A template for deploying an Elastic Stack server. Defines a private instance and firewall rules.|
+
+## Creating An Infrastructure Template
+
+To create a new infrastructure template, follow these steps.
+1. Select your account in the bottom left corner of the Forge dashboard.
+2. Click the "Settings" button.
+3. Select the "Infrastructure Templates" tab, then "Create Template".
+4. Complete the form to add your new template.
+
+![Creating a new infrastructure template in Forge](/images/create-infrastructure-template.png)
+
+### Important Considerations
+
+Whilst Forge aims to provide a seamless experience for deploying infrastructure templates, it is important to note that some adjustments may be required when bringing your own infrastructure templates into Forge.
+
+<Note type="danger" title="Important">
+    Failing to follow these guidelines may result in unexpected behavior or errors during deployment.
+</Note>
+
+#### Instances/Hosts
+A maximum of once instance or host should be defined within your infrastructure templates. Infrastructure templates are designed to be modular and therefore, individual instances should be defined within each template.
+
+#### User Data
+User data should not be defined or added within your infrastructure templates. This is added automatically to your instances by Forge. If you would like to customise the default user data, you can do so within Forge&apos;s settings.
+
+#### SSH Keys
+SSH Keys should not be defined or added within your infastructure templates. These are managed and added automatically to your instances by Forge.
+
+### Infrastructure Template Variables
+
+The following variables are available for use in infrastructure templates.
+
+|Name|Description|
+|---|---|
+|`infrastructure-id`|A unique identifier assigned to the infrastructure created.|
+|`text`|Basic text|
+|`number`|Basic number.|
+|`private-ip`|Private IP address of a host.|
+|`public-ip`|Public IP address of a host.|
+|`tailscale-ip`|Tailscale IP address of a host.|
+|`domain`|A domain tracked within Forge.|
+|`subnet`|Provider specific subnet ID.|
+|`vpc`|Provider specific VPC ID.|
