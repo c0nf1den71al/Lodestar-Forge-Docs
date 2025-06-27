@@ -3,7 +3,7 @@
 <!-- PROJECT LOGO -->
 <div align="center">
   <a href="https://github.com/c0nf1den71al/Lodestar-Forge">
-    <img src="https://github.com/c0nf1den71al/Lodestar-Forge/images/header.png" alt="Logo" width="400" height="166.6">
+    <img src="https://raw.githubusercontent.com/c0nf1den71al/Lodestar-Forge/refs/heads/main/images/header.png" alt="Logo" width="400" height="166.6">
   </a>
   <br /><br />
   <p align="center">
@@ -50,7 +50,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-![Lodestar Forge Screen Shot](https://github.com/c0nf1den71al/Lodestar-Forge/images/overview.gif)
+![Lodestar Forge Screen Shot](https://github.com/c0nf1den71al/Lodestar-Forge/blob/main/images/overview.gif?raw=true)
 
 > [!CAUTION]
 > Lodestar Forge is still in early development. Some feautres of the platform may be unstable and therefore all infrastructure should be verified manually directly within your cloud provider console. We are not responsible for any unexpected billing which may occur due to bugs in the platform.
