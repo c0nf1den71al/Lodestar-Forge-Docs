@@ -14,6 +14,7 @@ The default infrastructure templates available in Forge are outlined below.
 |Name|Description|
 |---|---|
 |HTTP Redirector|A template for deploying HTTP redirectors. Defines a public-facing instance and firewall rules.|
+|CloudFront Redirector|A template for deploying CloudFront redirectors. This template is only available for AWS infrastructure.|
 |C2 Server|A template for deploying C2 servers. Defines a private instance and firewall rules.|
 |Elastic Stack|A template for deploying an Elastic Stack server. Defines a private instance and firewall rules.|
 
@@ -36,7 +37,7 @@ Whilst Forge aims to provide a seamless experience for deploying infrastructure 
 </Note>
 
 #### Instances/Hosts
-A maximum of once instance or host should be defined within your infrastructure templates. Infrastructure templates are designed to be modular and therefore, individual instances should be defined within each template.
+A maximum of once instance, droplet, or host should be defined within your infrastructure templates. Infrastructure templates are designed to be modular and therefore, individual instances should be defined within each template.
 
 #### User Data
 User data should not be defined or added within your infrastructure templates. This is added automatically to your instances by Forge. If you would like to customise the default user data, you can do so within Forge&apos;s settings.
@@ -45,7 +46,6 @@ User data should not be defined or added within your infrastructure templates. T
 SSH Keys should not be defined or added within your infastructure templates. These are managed and added automatically to your instances by Forge.
 
 ### Infrastructure Template Variables
-
 The following variables are available for use in infrastructure templates.
 
 |Name|Description|
