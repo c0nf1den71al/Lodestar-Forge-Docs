@@ -1,0 +1,17 @@
+---
+title: Users
+description: Users and their permissions within Lodestar Forge.
+---
+
+When deploying Forge in a production environment, it is strongly recommended to use dedicated user accounts following the principle of least privilege. Accounts can be managed and created by admin users within Forge's settings.
+
+## User Permissions and Roles
+
+The following table outlines the permissions and roles available and their associated permissions:
+
+|Permission|Read Only|Operator|Service|Admin|
+|---|---|---|---|---|
+|Full read access|Yes|Yes|Yes|Yes|
+|Create, modify, and delete projects, deployments, infrastrure, resources, and domains |No|Yes|Yes|Yes|
+|Create, modify, and delete templates, ssh keys, and files|No|Yes|Yes|Yes|
+|Create, modify, and delete, integrations, deployment settings, and users |No|No|Yes|Yes|
