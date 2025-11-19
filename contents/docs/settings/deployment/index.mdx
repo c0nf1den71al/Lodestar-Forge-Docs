@@ -1,0 +1,22 @@
+---
+title: Deployment Settings
+description: Deployment settings within Lodestar Forge.
+---
+
+Several settings are available within Forge to customize your deployment experience. An overview of these settings is provided below.
+
+![Creating a new user](/images/infrastructure-settings)
+
+
+## Ansible Output
+This setting allows you to customise the verbosity of the Ansible output, useful for debugging custom [configuration templates](/docs/files-and-templates/configuration-templates). There are two options available for this setting: "Normal" and "Verbose".
+
+## Extra User-Data
+When deploying infrastructure using Forge, by default, user data scripts are utilised to onboard instances to your [Tailscale](/docs/integrations/tailscale) network. Although [configuration templates](/docs/files-and-templates/configuration-templates) are recommended for executing commands and scripts, this setting allows you to define a custom user data script.
+
+<Note>
+    Any custom user data script which you define will be executed in addition to Forge&apos;s default user data script. The default user data script is not overwritten by this value.
+</Note>
+
+## Tailscale Tag
+This setting allows you to define a custom Tailscale tag which will be applied to all instances deployed using Forge. More information on Tailscale ACLs and Tags can be found [here](/docs/integrations/tailscale).

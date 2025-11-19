@@ -98,9 +98,10 @@ export const ROUTES: EachRoute[] = [
     {
         title: "Settings",
         href: "/settings",
+        noLink: true,
         items: [
+            { title: "Deployment", href: "/deployment" },
             { title: "Users", href: "/users" },
-            { title: "Infrastructure", href: "/infrastructure" },
             { title: "SSH Keys", href: "/ssh-keys" },
         ],
     },

@@ -11,7 +11,7 @@ To create a deployment within Forge, simply follow the steps below:
 2. Click the "Create deployment" button.
 3. Complete the form to create your deployment.
 
-![Creating a deployment](/images/create-deployment.png)
+![Creating a deployment](/images/create-deployment)
 
 ## Preparing A Deployment
 Before infrastructure can be added to a deployment, it must be prepared. This step performs the following actions:
@@ -22,20 +22,18 @@ Before infrastructure can be added to a deployment, it must be prepared. This st
 
 To prepare a deployment, simply click the "Prepare" button located within the "Deployment Status" card.
 
-![Preparing a deployment](/images/prepare-deployment.png)
-
 Once your deployment has been prepared, refer to the [infrastructure](/docs/infrastructure) section for next steps.
 
-## Deleting A Deployment
-To delete a deployment within Forge, simply follow the steps below.
-
-<Note type="danger">
-    Be careful! Once a deployment is deleted, it cannot be recovered.
-</Note>
+## Destroying A Deployment
+To destroy a deployment within Forge, simply follow the steps below.
 
 1. With a project selected, select the "Deployments" tab in the sidebar.
 2. Select the deployment to be deleted from the deployments table.
-3. Within the "Danger Zone", click the "Delete Deployment" button.
-4. Confirm the deletion by clicking the "Delete" button.
+3. Within the "Danger Zone", click the "Destroy Deployment" button.
+4. Confirm the destruction by entering the deployment name and clicking the "Destroy" button.
 
-![Deleting a deployment](/images/delete-deployment.png)
+<Note>
+Once a deployment has been destroyed, it can redeployed by clicking the "Deploy" button located within the "Deployment Status" card.
+</Note>
+
+![Destroying a deployment](/images/destroy-deployment)

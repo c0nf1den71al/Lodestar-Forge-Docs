@@ -5,9 +5,19 @@ description: A required cloud provider where infrastructure can be deployed.
 
 One of the first steps to be taken once Forge is configured is to connect either an AWS or [DigitalOcean](/docs/integrations/digitalocean) account. At least one cloud provider must be connected to use Forge, since it is required for deploying infrastructure.
 
+## AWS IAM Roles
+
+If your Lodestar Forge deployment is running on an EC2 instance, you can use [attached IAM roles](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/attach-iam-role.html) to authenticate with AWS.
+
+<Note type="success" title="Recommended">
+  Where possible, IAM roles should be the preferred method of authentication since it eliminates the need for AWS Access Keys to be stored in the Forge database.
+</Note>
+
 ## AWS Access Keys
 
-The AWS integration requires an AWS Access Key ID, and AWS Secret Access Key. Whilst this documentation does not cover how to create AWS Access Keys, you can find instructions on how to do so [here](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey).
+Alternatively, the AWS integration supports an AWS Access Key ID, and AWS Secret Access Key. Whilst this documentation does not cover how to create AWS Access Keys, you can find instructions on how to do so [here](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey).
+
+Both the Access Key ID and Secret Access Key are encrypted and stored securely in the Forge database.
 
 ### AWS User Permissions
 
@@ -27,4 +37,8 @@ To add an AWS integration into Forge, simply follow the steps below.
 3. Select the "integrations" tab, then "Add Integration".
 4. Complete the form to add your AWS integration.
 
-![Adding an AWS integration in Forge](/images/add-aws-integration.png)
+<Note>
+    You can test your AWS integration by clicking the "Test" button before saving.
+</Note>
+
+![Adding an AWS integration in Forge](/images/add-aws-integration)
